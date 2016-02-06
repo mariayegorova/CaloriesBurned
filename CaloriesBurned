@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class CaloriesBurned
+{
+	public static void main(String[] args)
+	{
+
+		System.out.println("I will calculate the total number of calories you've burned while excercising.");
+		
+		System.out.println("Enter your weight in pounds: ");
+		
+		Scanner keyboard = new Scanner(System.in);
+		
+		double weight = keyboard.nextInt();
+		
+		System.out.println("You've entered: " + weight);
+		
+		// pounds to kg conversion
+		double mass = weight / 2.2;
+		
+		// MET for various activities
+		int running = 10;
+		int basketball = 8;
+		int sleeping = 1;
+		
+		double calRunning = 1.75e-2 * running * mass * 30;
+		double calBasketball = 1.75e-2 * basketball * mass * 30;
+		double calSleeping = 1.75e-2 * sleeping * mass * 6 * 60;
+		
+		// formula for total number of calories burned
+		double totalCal = calRunning + calBasketball + calSleeping;
+		
+		System.out.println("You've burned " + totalCal + " " + "total number of calories");
+		
+	}
+}
